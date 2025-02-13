@@ -3,10 +3,10 @@ import Image from "next/image";
 import { FiMenu } from "react-icons/fi";
 import { IoCloseSharp } from "react-icons/io5";
 import useNavbar from "@/hooks/UseNavbar";
-import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import SocialIcon from "./SocialIcon";
+import NavItem from "./NavItem";
+import { navName } from "@/constants";
 
 const Navbar = () => {
   const { toggle, isOpen, iconClicked, handleIconClick } = useNavbar();
@@ -14,7 +14,6 @@ const Navbar = () => {
     toggle();
     handleIconClick();
   };
-
   const navItemVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -26,7 +25,6 @@ const Navbar = () => {
       },
     },
   };
-
   return (
     <section className="w-full h-fit bg-white">
       <nav
@@ -72,68 +70,20 @@ const Navbar = () => {
               },
             }}
           >
-            <motion.li
-              className="w-[95%] h-[70px] flex items-center justify-center rounded-[7px] transition duration-300 ease-in-out *:opacity-80 hover:*:opacity-100"
-              variants={navItemVariants}
-            >
-              <Link
-                href="/"
-                className="bg-[#e6e6e6] hover:bg-[#d3d3d3] w-full h-full underline-animation flex justify-center rounded-[7px] items-center"
-              >
-                About Us
-              </Link>
-            </motion.li>
-            <motion.li
-              className="w-[95%] h-[70px] flex items-center justify-center rounded-[7px] transition duration-300 ease-in-out *:opacity-80 hover:*:opacity-100"
-              variants={navItemVariants}
-            >
-              <Link
-                href="/"
-                className="bg-[#e6e6e6] hover:bg-[#d3d3d3] w-full h-full underline-animation flex justify-center rounded-[7px] items-center"
-              >
-                About Us
-              </Link>
-            </motion.li>
-            <motion.li
-              className="w-[95%] h-[70px] flex items-center justify-center rounded-[7px] transition duration-300 ease-in-out *:opacity-80 hover:*:opacity-100"
-              variants={navItemVariants}
-            >
-              <Link
-                href="/"
-                className="bg-[#e6e6e6] hover:bg-[#d3d3d3] w-full h-full underline-animation flex justify-center rounded-[7px] items-center"
-              >
-                About Us
-              </Link>
-            </motion.li>
-            <motion.li
-              className="w-[95%] h-[70px] flex items-center justify-center rounded-[7px] transition duration-300 ease-in-out *:opacity-80 hover:*:opacity-100"
-              variants={navItemVariants}
-            >
-              <Link
-                href="/"
-                className="bg-[#e6e6e6] hover:bg-[#d3d3d3] w-full h-full underline-animation flex justify-center rounded-[7px] items-center"
-              >
-                About Us
-              </Link>
-            </motion.li>
+            {navName.map((name, index) => (
+              <NavItem
+                key={index}
+                name={name}
+                navItemVariants={navItemVariants}
+              />
+            ))}
 
             {/* social icons */}
             <motion.li
               className="flex gap-4 mt-5 *:opacity-80 hover:*:opacity-100"
               variants={navItemVariants}
             >
-              <Link href="/">
-                <FaFacebookF />
-              </Link>
-              <Link href="/">
-                <FaYoutube />
-              </Link>
-              <Link href="/">
-                <FaInstagram />
-              </Link>
-              <Link href="/">
-                <FaXTwitter />
-              </Link>
+              <SocialIcon />
             </motion.li>
           </motion.ul>
         </div>

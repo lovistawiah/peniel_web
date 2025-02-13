@@ -1,0 +1,1 @@
+export const navName = ["Home", "About", "Services", "Contact"];
