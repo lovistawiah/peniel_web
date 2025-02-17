@@ -9,7 +9,7 @@ const NavItem = ({
 }) => {
   return (
     <motion.li
-      className="w-[95%] h-[70px] flex items-center justify-center rounded-[7px] transition duration-300 ease-in-out *:opacity-80 hover:*:opacity-100"
+      className="w-[95%] h-[70px] flex items-center justify-center rounded-[7px] transition duration-300 ease-in-out *:opacity-80 hover:*:opacity-100 md:last-of-type:ml-auto"
       variants={navItemVariants}
     >
       <Link

@@ -1,1 +1,1 @@
-export const navName = ["Home", "About", "Services", "Contact"];
+export const navName = ["Home", "About Us", "Ministries", "Contact Us", "Give"];
