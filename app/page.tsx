@@ -2,6 +2,7 @@ import Events from "@/components/Events";
 import LandingPage from "@/components/LandingPage";
 import Navbar from "@/components/Navbar";
 import VisionMission from "@/components/VisionMission";
+import WordsOfGrace from "@/components/WordsOfGrace";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <LandingPage />
       <Events />
       <VisionMission />
+      <WordsOfGrace />
     </section>
   );
 }
