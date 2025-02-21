@@ -8,7 +8,9 @@ body {
 
 .underline-animation {
   position: relative;
-  overflow: hidden;
+  display: inline-block;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .underline-animation::after {
@@ -18,10 +20,14 @@ body {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #a7a7a7;
+  background-color: currentColor;
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s ease-out;
+}
+
+.underline-animation:hover {
+  opacity: 1;
 }
 
 .underline-animation:hover::after {
@@ -78,6 +84,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -110,6 +117,7 @@ body {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }

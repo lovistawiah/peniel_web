@@ -1,5 +1,6 @@
 import Contact from "@/components/Contact";
 import Events from "@/components/Events";
+import Footer from "@/components/Footer";
 import LandingPage from "@/components/LandingPage";
 import Navbar from "@/components/Navbar";
 import NotableSpeakers from "@/components/NotableSpeakers";
@@ -18,6 +19,7 @@ export default function Home() {
       <SeniorPastor />
       <NotableSpeakers />
       <Contact />
+      <Footer />
     </section>
   );
 }
