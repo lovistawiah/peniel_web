@@ -1,3 +1,4 @@
+import Contact from "@/components/Contact";
 import Events from "@/components/Events";
 import LandingPage from "@/components/LandingPage";
 import Navbar from "@/components/Navbar";
@@ -16,6 +17,7 @@ export default function Home() {
       <WordsOfGrace />
       <SeniorPastor />
       <NotableSpeakers />
+      <Contact />
     </section>
   );
 }
